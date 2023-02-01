@@ -16,6 +16,9 @@
                 <DataTemplate DataType="{x:Type vmuc:LaunchViewModel}">
                     <vuc:LaunchView/>
                 </DataTemplate>
+                <DataTemplate DataType="{x:Type vmuc:LoginViewModel}">
+                    <vuc:LoginView/>
+                </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>
     </Grid>
