@@ -7,19 +7,21 @@ namespace TeamScheduleApp.ViewModels.Windows
     /// </summary>
     public class MainWindowViewModel : BaseViewModel
     {
-        private readonly NavigationStore _navigationStore;
+        // current NavigationStore buffer
+        private readonly NavigationStore NavigationStore;
 
-        public BaseViewModel CurrentViewModel => _navigationStore.CurrentViewModel;
+        // CurrentViewModel buffer
+        public BaseViewModel CurrentViewModel => NavigationStore.CurrentViewModel;
 
         public MainWindowViewModel(NavigationStore navigationStore)
         {
-            _navigationStore = navigationStore;
-            //_navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
-        }
+            NavigationStore = navigationStore;
 
-        //private void OnCurrentViewModelChanged()
-        //{
-        //    OnPropertyChanged(nameof(CurrentViewModel));
-        //}
+            // UpdateProperty if is a CurrentViewModel property
+            navigationStore.PropertyChanged += (sender, args) =>
+            {
+                if (args.PropertyName == "CurrentViewModel") OnPropertyChanged("CurrentViewModel");
+            };
+        }
     }
 }

@@ -13,15 +13,25 @@ namespace TeamScheduleApp.ViewModels
     {
         #region Property Helpers
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        /// <summary>
+        /// Helper metod to fast set a params for property
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="field">referense to field</param>
+        /// <param name="value">value</param>
+        /// <param name="propertyName">name of our property</param>
+        /// <returns>is params setted</returns>
         protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = "")
         {
             if (EqualityComparer<T>.Default.Equals(field, value)) return false;
             field = value;
+
             OnPropertyChanged(propertyName);
             return true;
         }
@@ -40,20 +50,16 @@ namespace TeamScheduleApp.ViewModels
     /// </summary>
     class RelayCommand : ICommand
     {
-        private Action<object> _action;
+        private readonly Action<object> _action;
 
-        public RelayCommand(Action<object> action) => _action = action;
-
-        public bool CanExecute(object parameter)
+        public RelayCommand(Action<object> action)
         {
-            return true;
+            _action = action;
         }
 
+        public bool CanExecute(object parameter) => true;
         public event EventHandler CanExecuteChanged;
 
-        public void Execute(object parameter)
-        {
-            _action(parameter);
-        }
+        public void Execute(object parameter) => _action(parameter);
     }
 }

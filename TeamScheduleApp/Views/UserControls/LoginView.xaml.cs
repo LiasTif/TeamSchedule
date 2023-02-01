@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace TeamScheduleApp.ViewModels.UserControls
+namespace TeamScheduleApp.Views.UserControls
 {
     /// <summary>
     /// Interaction logic for LoginView.xaml

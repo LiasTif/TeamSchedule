@@ -13,10 +13,15 @@ namespace TeamScheduleApp
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            NavigationStore navigationStore = new NavigationStore { CurrentViewModel = new LaunchViewModel() };
+            NavigationStore navigationStore = new NavigationStore();
+
+            // set current ViewModel(UserControl) to LaunchViewModel
+            navigationStore.CurrentViewModel = new LaunchViewModel(navigationStore);
 
             MainWindow mainWindow = new MainWindow();
             MainWindowViewModel viewModel = new MainWindowViewModel(navigationStore);
+
+            // set ViewModel(DataContext) for MainWindow
             mainWindow.DataContext = viewModel;
             mainWindow.Show();
         }
