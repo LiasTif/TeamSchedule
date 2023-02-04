@@ -10,6 +10,7 @@ namespace TeamScheduleApp.ViewModels.UserControls
     {
         #region commands
         public ICommand NavigateLoginView { get; }
+        public ICommand NavigateRegistrationView { get; }
         #endregion
 
         /// <summary>
@@ -20,6 +21,8 @@ namespace TeamScheduleApp.ViewModels.UserControls
         {
             // Set LoginViewModel like CurrentViewModel
             NavigateLoginView = CommandFromFunction(x => navigationStore.CurrentViewModel = new LoginViewModel(navigationStore));
+            // Set RegistrationViewModel like CurrentViewModel
+            NavigateRegistrationView = CommandFromFunction(x => navigationStore.CurrentViewModel = new RegistrationViewModel(navigationStore));
         }
     }
 }

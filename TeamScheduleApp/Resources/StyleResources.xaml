@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--#region registration view styles-->
+    <Style TargetType="Viewbox" x:Key="tbx-vbRegistrationView">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Margin" Value="0,20,20,20"/>
+        <Setter Property="MaxHeight" Value="75"/>
+        <Setter Property="Grid.Column" Value="1"/>
+    </Style>
+    <Style TargetType="TextBox" x:Key="tbxPinRegistrationView">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="MinWidth" Value="25"/>
+        <Setter Property="Margin" Value="10,0,0,0"/>
+        <Setter Property="MaxLength" Value="1"/>
+    </Style>
+    <Style
+        TargetType="TextBox"
+        BasedOn="{StaticResource tbxPinRegistrationView}"
+        x:Key="tbxFirtPinRegistrationView">
+        <Setter Property="Margin" Value="0"/>
+    </Style>
+    <!--#endregion-->
+</ResourceDictionary>

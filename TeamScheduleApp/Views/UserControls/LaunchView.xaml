@@ -3,33 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <!--#region columns&rows-->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.05*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="0.05*"/>
-        </Grid.ColumnDefinitions>
+             mc:Ignorable="d" d:Height="1080" d:Width="1960">
+    <Grid d:Background="#fff">
+        <!--#region Rows&Columns-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.05*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="0.05*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.25*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.25*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.25*"/>
+        </Grid.ColumnDefinitions>
         <!--#endregion-->
 
-        <StackPanel Grid.Row="1" Grid.Column="1"
-                    Margin="5" VerticalAlignment="Center">
-            <!--to login menu but-->
-            <Viewbox MaxHeight="100" Margin="0,0,0,5">
-                <Button Content="Вход"
-                        Command="{Binding NavigateLoginView}"/>
-            </Viewbox>
-            <!--to registration menu but-->
-            <Viewbox MaxHeight="100">
-                <Button Content="Регистрация"/>
-            </Viewbox>
-        </StackPanel>
+        <!--header-->
+        <Viewbox Grid.Column="1" Grid.ColumnSpan="3"
+                 Grid.Row="1" Margin="100"
+                 HorizontalAlignment="Center"
+                 MaxHeight="240">
+            <TextBlock Text="TeamSchedule"/>
+        </Viewbox>
+
+        <Viewbox Grid.Column="2" Grid.Row="2"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Margin="0,45,0,45" Grid.RowSpan="2">
+            <StackPanel>
+                <!--singUp button-->
+                <Viewbox MaxHeight="70" Margin="0,0,0,30">
+                    <Button MinWidth="60" Content="Войти"
+                    Command="{Binding NavigateLoginView}"/>
+                </Viewbox>
+
+                <!--singIn button-->
+                <Viewbox MaxHeight="70">
+                    <Button MinWidth="60" Content="Зарегестрироваться"
+                    Command="{Binding NavigateRegistrationView}"/>
+                </Viewbox>
+            </StackPanel>
+        </Viewbox>
     </Grid>
 </UserControl>
