@@ -97,8 +97,7 @@
                         <DataTemplate>
                             <TextBox
                                 Text="{Binding Text}"
-                                Style="{Binding Id, Converter={StaticResource IndexToStyleConverter},
-                                    ConverterParameter=0}"/>
+                                Style="{Binding Id, Converter={StaticResource IndexToStyleConverter}}"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

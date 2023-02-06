@@ -17,7 +17,7 @@ namespace TeamScheduleApp.Conventers.RegistrationView
         /// <param name="targetType"></param>
         /// <param name="parameter"></param>
         /// <param name="culture"></param>
-        /// <returns>visibility for buttom(bool)</returns>
+        /// <returns>visibility for button (boolean)</returns>
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (values.Count() >= 6)

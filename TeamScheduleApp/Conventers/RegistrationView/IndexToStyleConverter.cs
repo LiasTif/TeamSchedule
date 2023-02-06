@@ -20,6 +20,7 @@ namespace TeamScheduleApp.Conventers.RegistrationView
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            // create URI to ResourceDictionary
             ResourceDictionary resourceDictionary =
                 Application.LoadComponent(new Uri("/TeamScheduleApp;component/Resources/StyleResources.xaml",
                     UriKind.Relative))as ResourceDictionary;
