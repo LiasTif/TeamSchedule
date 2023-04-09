@@ -10,6 +10,7 @@ namespace TeamScheduleDataManager
     {
         public TeamScheduleDbContext() : base("DbTeamSchedule")
         {
+
         }
 
         public DbSet<Task> Tasks { get; set; }

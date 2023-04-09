@@ -1,5 +1,4 @@
-﻿using System.Windows.Input;
-using TeamScheduleApp.API;
+﻿using TeamScheduleApp.API;
 
 namespace TeamScheduleApp.ViewModels.UserControls
 {
@@ -8,9 +7,8 @@ namespace TeamScheduleApp.ViewModels.UserControls
     /// </summary>
     public class LoginViewModel : BaseViewModel
     {
-        #region commands
-        public ICommand NavigateLaunchView { get; }
-        #endregion
+        public NavigationStore NavigationStore { get; set; }
+        public UserInitElementsViewModel UserInitElementsViewModel { get; set; }
 
         /// <summary>
         /// LoginViewModel init
@@ -18,8 +16,7 @@ namespace TeamScheduleApp.ViewModels.UserControls
         /// <param name="navigationStore">current instance of NavigationStore</param>
         public LoginViewModel(NavigationStore navigationStore)
         {
-            // Set LaunchViewModel like CurrentViewModel
-            NavigateLaunchView = CommandFromFunction(x => navigationStore.CurrentViewModel = new LaunchViewModel(navigationStore));
+            NavigationStore = navigationStore;
         }
     }
 }

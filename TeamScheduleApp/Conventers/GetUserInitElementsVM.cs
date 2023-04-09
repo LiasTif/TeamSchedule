@@ -28,7 +28,7 @@ namespace TeamScheduleApp.Conventers
             if (value == null)
                 return null;
             else
-                return userInitElementsVM ?? throw new NullReferenceException("userInitElementsVM"); // if userInitElementsVM are null throw Exception
+                return userInitElementsVM ?? throw new Exception(); // if userInitElementsVM are null throw Exception
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

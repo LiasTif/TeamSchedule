@@ -21,13 +21,13 @@ namespace TeamScheduleApp.Conventers.RegistrationView
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             // create URI to ResourceDictionary
-            ResourceDictionary resourceDictionary =
+            ResourceDictionary dictionary =
                 Application.LoadComponent(new Uri("/TeamScheduleApp;component/Resources/StyleResources.xaml",
                     UriKind.Relative))as ResourceDictionary;
 
             // set style to TextBox depending on whether he is the first on the list
             return (int)value == 0 ?
-                resourceDictionary["tbxFirtPinRegistrationView"] : resourceDictionary["tbxPinRegistrationView"];
+                dictionary["tbxFirtPinRegistrationView"] : dictionary["tbxPinRegistrationView"];
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -3,12 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Button Content="Назад"
-                Command="{Binding NavigateLaunchView}"
-                MaxHeight="100"
-                MaxWidth="200"/>
+             xmlns:ucViews="clr-namespace:TeamScheduleApp.Views.UserControls"
+             xmlns:conventers="clr-namespace:TeamScheduleApp.Conventers"
+             mc:Ignorable="d" d:Height="1080" d:Width="1960">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <conventers:GetUserInitElementsVM x:Key="GetUserInitElementsVM"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid d:Background="#fff">
+        <!--#region Rows&Columns-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="0.25*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.25*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="0.25*"/>
+        </Grid.ColumnDefinitions>
+        <!--#endregion-->
+
+        <!--header-->
+        <Viewbox
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="0,0,0,10">
+            <TextBlock Text="Login"/>
+        </Viewbox>
+
+        <!--#region content-->
+        <ucViews:UserInitElements
+            Grid.Column="1"
+            Grid.Row="2"
+            DataContext="{Binding Path=DataContext,
+                                  RelativeSource={RelativeSource AncestorType={x:Type UserControl}},
+                                  Converter={StaticResource GetUserInitElementsVM}}"/>
+        <!--#endregion-->
     </Grid>
 </UserControl>

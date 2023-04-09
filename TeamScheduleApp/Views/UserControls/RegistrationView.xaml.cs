@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using TeamScheduleApp.Models;
 
 namespace TeamScheduleApp.Views.UserControls
 {

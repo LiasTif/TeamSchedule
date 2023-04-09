@@ -37,13 +37,13 @@
             <StackPanel>
                 <!--singUp button-->
                 <Viewbox MaxHeight="70" Margin="0,0,0,30">
-                    <Button MinWidth="60" Content="Войти"
+                    <Button MinWidth="60" Content="Log In"
                     Command="{Binding NavigateLoginView}"/>
                 </Viewbox>
 
                 <!--singIn button-->
                 <Viewbox MaxHeight="70">
-                    <Button MinWidth="60" Content="Зарегестрироваться"
+                    <Button MinWidth="60" Content="Registration"
                     Command="{Binding NavigateRegistrationView}"/>
                 </Viewbox>
             </StackPanel>

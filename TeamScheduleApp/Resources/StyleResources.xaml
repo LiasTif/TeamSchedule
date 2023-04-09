@@ -10,8 +10,7 @@
     <Style TargetType="TextBox" x:Key="tbxPinRegistrationView">
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="MinWidth" Value="25"/>
-        <Setter Property="Margin" Value="10,0,0,0"/>
+        <Setter Property="MinWidth" Value="17"/>
         <Setter Property="MaxLength" Value="1"/>
     </Style>
     <Style
