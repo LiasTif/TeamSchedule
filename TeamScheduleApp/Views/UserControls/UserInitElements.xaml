@@ -1,0 +1,166 @@
+﻿<UserControl x:Class="TeamScheduleApp.Views.UserControls.UserInitElements"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TeamScheduleApp.Views.UserControls"
+             xmlns:conventers="clr-namespace:TeamScheduleApp.Conventers.RegistrationView"
+             xmlns:models="clr-namespace:TeamScheduleApp.Models"
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/TeamScheduleApp;component/Resources/StyleResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <conventers:IndexToStyleConverter x:Key="IndexToStyleConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid
+        Background="#fff"
+        Grid.Row="2"
+        Grid.Column="1">
+        <!--#region Rows&Columns-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--#endregion-->
+
+        <!--#region TextBoxes-->
+        <!--first name-->
+        <Viewbox
+                Style="{StaticResource tbx-vbRegistrationView}"
+                Grid.Row="1">
+            <TextBox
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Name="FNameTextBox"
+                    Width="130"
+                    MaxLength="15"
+                    Text="{Binding PersonDataProcessor.FirstName,
+                                   UpdateSourceTrigger=PropertyChanged,
+                                   Mode=TwoWay}"/>
+        </Viewbox>
+
+        <!--last name-->
+        <Viewbox 
+                Style="{StaticResource tbx-vbRegistrationView}"
+                Grid.Row="2"
+                x:Name="tb_vbLName">
+            <TextBox
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Name="tbLName"
+                    Width="130"
+                    MaxLength="15"
+                    Text="{Binding PersonDataProcessor.LastName,
+                                   UpdateSourceTrigger=PropertyChanged,
+                                   Mode=TwoWay}"/>
+        </Viewbox>
+
+        <!--pin code-->
+        <Viewbox
+                Style="{StaticResource tbx-vbRegistrationView}"
+                Grid.Row="3"
+                MaxWidth="{Binding ElementName=tb_vbLName, Path=ActualWidth}">
+            <ItemsControl ItemsSource="{Binding TextBoxes}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid
+                                Rows="1"
+                                MinWidth="{Binding ElementName=tbLName, Path=ActualWidth}"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBox
+                                MaxWidth="10"
+                                Text="{Binding Text,
+                                               Mode=TwoWay,
+                                               UpdateSourceTrigger=PropertyChanged}"
+                                Style="{Binding Id,
+                                                Converter={StaticResource IndexToStyleConverter}}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Viewbox>
+        <!--#endregion-->
+
+        <!--#region TextBlocks-->
+        <!--first name-->
+        <Viewbox
+                Grid.Column="2"
+                Grid.Row="1"
+                Margin="20"
+                HorizontalAlignment="Left">
+            <TextBlock Text="First Name"/>
+        </Viewbox>
+
+        <!--last name-->
+        <Viewbox
+                Grid.Column="2"
+                Grid.Row="2"
+                Margin="20"
+                HorizontalAlignment="Left">
+            <TextBlock Text="Last Name"/>
+        </Viewbox>
+        <!--pin code-->
+        <Viewbox
+                Grid.Column="2"
+                Grid.Row="3"
+                Margin="20"
+                HorizontalAlignment="Left">
+            <TextBlock Text="Pin"/>
+        </Viewbox>
+        <!--#endregion-->
+
+        <!--#region bottom Buttons-->
+        <Viewbox
+                Grid.Column="1"
+                Grid.Row="4"
+                Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <!--back button-->
+                <Viewbox
+                        HorizontalAlignment="Left"
+                        MaxHeight="70"
+                        MinHeight="40"
+                        MaxWidth="45">
+                    <Button
+                            Content="Cancel"
+                            Margin="10,10,15,10"
+                            MinWidth="45"
+                            Command="{Binding NavigateLaunchView}"/>
+                </Viewbox>
+
+                <!--continue button-->
+                <Viewbox
+                        HorizontalAlignment="Left"
+                        MaxHeight="70"
+                        MinHeight="40"
+                        MaxWidth="45">
+                    <Button
+                            Content="Create"
+                            Margin="15,10,10,10"
+                            MinWidth="45"
+                            IsEnabled="{Binding Path=ContinueButtonProcessor.IsContinueButEnable,
+                                                UpdateSourceTrigger=PropertyChanged}">
+                    </Button>
+                </Viewbox>
+            </StackPanel>
+        </Viewbox>
+        <!--#endregion-->
+    </Grid>
+</UserControl>

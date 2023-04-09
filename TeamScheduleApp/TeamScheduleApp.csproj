@@ -58,10 +58,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Resources\StyleResources.xaml">
+    <Resource Include="Resources\StyleResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
+    </Resource>
     <Page Include="Views\UserControls\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -74,6 +74,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\UserControls\UserInitElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -83,15 +87,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Conventers\GetUserInitElementsVM.cs" />
     <Compile Include="Conventers\RegistrationView\IndexToStyleConverter.cs" />
-    <Compile Include="Conventers\RegistrationView\RegistrationDataConventer.cs" />
+    <Compile Include="Models\RegistrationModels\ContinueButtonProcessor.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\RegistrationModels\PersonDataProcessor.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\Elements\RegistrationTextBoxViewModel.cs" />
+    <Compile Include="ViewModels\Elements\TextBoxViewModel.cs" />
     <Compile Include="ViewModels\UserControls\LaunchViewModel.cs" />
     <Compile Include="ViewModels\UserControls\LoginViewModel.cs" />
     <Compile Include="ViewModels\UserControls\RegistrationViewModel.cs" />
+    <Compile Include="ViewModels\UserControls\UserInitElementsViewModel.cs" />
     <Compile Include="Views\UserControls\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -101,6 +108,9 @@
     </Compile>
     <Compile Include="Views\UserControls\RegistrationView.xaml.cs">
       <DependentUpon>RegistrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\UserInitElements.xaml.cs">
+      <DependentUpon>UserInitElements.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
