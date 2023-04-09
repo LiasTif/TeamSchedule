@@ -63,12 +63,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TeamScheduleApp\TeamScheduleApp.csproj">
-      <Project>{80902d08-280a-4522-b038-46a4d1092fa2}</Project>
-      <Name>TeamScheduleApp</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

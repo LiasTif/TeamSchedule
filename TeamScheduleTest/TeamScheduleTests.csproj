@@ -56,10 +56,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TeamScheduleApp\TeamScheduleApp.csproj">
-      <Project>{80902d08-280a-4522-b038-46a4d1092fa2}</Project>
-      <Name>TeamScheduleApp</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TeamScheduleDataManager\TeamScheduleDataManager.csproj">
       <Project>{6a681514-097b-462e-a038-a77f3df6f2b8}</Project>
       <Name>TeamScheduleDataManager</Name>
