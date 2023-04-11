@@ -53,7 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202304110726344_AddedPeopleAndTasks.cs" />
+    <Compile Include="Migrations\202304110726344_AddedPeopleAndTasks.designer.cs">
+      <DependentUpon>202304110726344_AddedPeopleAndTasks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Processors\AddEntityToDB.cs" />
     <Compile Include="Processors\ComparePeopleProcessor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,7 +74,11 @@
       <Name>TeamScheduleApp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202304110726344_AddedPeopleAndTasks.resx">
+      <DependentUpon>202304110726344_AddedPeopleAndTasks.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
