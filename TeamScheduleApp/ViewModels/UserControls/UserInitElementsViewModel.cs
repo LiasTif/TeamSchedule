@@ -19,6 +19,7 @@ namespace TeamScheduleApp.ViewModels.UserControls
 
         #region commands
         public ICommand NavigateLaunchView { get; }
+        public ICommand NavigateScheduleMenuView { get; }
         #endregion
 
         /// <summary>
@@ -35,6 +36,8 @@ namespace TeamScheduleApp.ViewModels.UserControls
 
             // Set LaunchViewModel like CurrentViewModel
             NavigateLaunchView = CommandFromFunction(x => navigationStore.CurrentViewModel = new LaunchViewModel(navigationStore));
+            // Set ScheduleMenuViewModel like CurrentViewModel
+            NavigateScheduleMenuView = CommandFromFunction(x => navigationStore.CurrentViewModel = new ScheduleMenuViewModel(navigationStore));
         }
     }
 }
