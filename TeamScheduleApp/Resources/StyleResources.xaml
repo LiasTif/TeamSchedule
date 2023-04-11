@@ -3,7 +3,7 @@
     <!--#region registration view styles-->
     <Style TargetType="Viewbox" x:Key="tbx-vbRegistrationView">
         <Setter Property="HorizontalAlignment" Value="Right"/>
-        <Setter Property="Margin" Value="0,20,20,20"/>
+        <Setter Property="Margin" Value="0,20,20,10"/>
         <Setter Property="MaxHeight" Value="75"/>
         <Setter Property="Grid.Column" Value="1"/>
     </Style>
