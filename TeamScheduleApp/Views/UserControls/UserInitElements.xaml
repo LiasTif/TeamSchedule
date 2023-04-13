@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TeamScheduleApp.Views.UserControls"
-             xmlns:conventers="clr-namespace:TeamScheduleApp.Conventers.RegistrationView"
+             xmlns:conventers="clr-namespace:TeamScheduleApp.Conventers"
              xmlns:models="clr-namespace:TeamScheduleApp.Models"
              mc:Ignorable="d" d:Height="1080" d:Width="1960">
 
@@ -13,6 +13,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/TeamScheduleApp;component/Resources/StyleResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <conventers:EnterButtonTextConventer x:Key="EnterButtonTextConventer"/>
             <conventers:IndexToStyleConverter x:Key="IndexToStyleConverter"/>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -152,7 +153,9 @@
                         MinHeight="40"
                         MaxWidth="45">
                     <Button
-                            Content="Create"
+                            Content="{Binding Path=DataContext,
+                                              RelativeSource={RelativeSource AncestorType={x:Type UserControl}},
+                                              Converter={StaticResource EnterButtonTextConventer}}"
                             Margin="15,10,10,10"
                             MinWidth="45"
                             Command="{Binding NavigateScheduleMenuView}"

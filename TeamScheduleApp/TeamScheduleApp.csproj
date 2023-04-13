@@ -91,8 +91,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Conventers\EnterButtonTextConventer.cs" />
     <Compile Include="Conventers\GetUserInitElementsVM.cs" />
-    <Compile Include="Conventers\RegistrationView\IndexToStyleConverter.cs" />
+    <Compile Include="Conventers\IndexToStyleConverter.cs" />
     <Compile Include="Models\RegistrationModels\ContinueButtonProcessor.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\RegistrationModels\PersonDataProcessor.cs" />

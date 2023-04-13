@@ -12,23 +12,29 @@ namespace TeamScheduleApp.Conventers
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (value == null)
+                return null;
+
             UserInitElementsViewModel userInitElementsVM = null;
 
             if (value is RegistrationViewModel registrationVM)
             {
-                userInitElementsVM = new UserInitElementsViewModel(registrationVM.NavigationStore);
+                userInitElementsVM = new UserInitElementsViewModel(registrationVM.NavigationStore)
+                {
+                    ParentViewModel = registrationVM
+                };
                 registrationVM.UserInitElementsViewModel = userInitElementsVM;
             }
             else if (value is LoginViewModel loginVM)
             {
-                userInitElementsVM = new UserInitElementsViewModel(loginVM.NavigationStore);
+                userInitElementsVM = new UserInitElementsViewModel(loginVM.NavigationStore)
+                {
+                    ParentViewModel = loginVM
+                };
                 loginVM.UserInitElementsViewModel = userInitElementsVM;
             }
-
-            if (value == null)
-                return null;
-            else
-                return userInitElementsVM ?? throw new Exception(); // if userInitElementsVM are null throw Exception
+            
+            return userInitElementsVM ?? throw new Exception(); // if userInitElementsVM are null throw Exception
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

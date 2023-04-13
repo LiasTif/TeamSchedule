@@ -12,6 +12,7 @@ namespace TeamScheduleApp.ViewModels.UserControls
         private const byte TextBoxesCount = 4;
 
         #region properties
+        public BaseViewModel ParentViewModel { get; set; }
         public ContinueButtonProcessor ContinueButtonProcessor { get; set; } = new ContinueButtonProcessor();
         public PersonDataProcessor PersonDataProcessor { get; set; }
         public ObservableCollection<TextBoxViewModel> TextBoxes { get; set; }

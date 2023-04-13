@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace TeamScheduleApp.Conventers.RegistrationView
+namespace TeamScheduleApp.Conventers
 {
     /// <summary>
     /// Change elemnt style based on it`s index 
