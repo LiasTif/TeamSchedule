@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!--#region registration view styles-->
+    <!--#region userInitElements view styles-->
     <Style TargetType="Viewbox" x:Key="tbx-vbRegistrationView">
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Margin" Value="0,20,20,10"/>
@@ -18,6 +18,18 @@
         BasedOn="{StaticResource tbxPinRegistrationView}"
         x:Key="tbxFirtPinRegistrationView">
         <Setter Property="Margin" Value="0"/>
+    </Style>
+    <!--#endregion-->
+    
+    <!--#region ScheduleMenu view styles-->
+    <Style TargetType="{x:Type DataGridColumnHeader}" x:Key="dgColumnHeader">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="SeparatorBrush" Value="#737373"/>
+        <Setter Property="FontFamily" Value="Dongle"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
     </Style>
     <!--#endregion-->
 </ResourceDictionary>

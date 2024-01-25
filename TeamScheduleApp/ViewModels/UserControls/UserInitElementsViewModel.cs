@@ -16,6 +16,13 @@ namespace TeamScheduleApp.ViewModels.UserControls
         public ContinueButtonProcessor ContinueButtonProcessor { get; set; } = new ContinueButtonProcessor();
         public PersonDataProcessor PersonDataProcessor { get; set; }
         public ObservableCollection<TextBoxViewModel> TextBoxes { get; set; }
+
+        private TextBoxViewModel focusedTextBox;
+        public TextBoxViewModel FocusedTextBox
+        {
+            get { return focusedTextBox; }
+            set { SetField(ref focusedTextBox, value, "FocusedTextBox"); }
+        }
         #endregion
 
         #region commands

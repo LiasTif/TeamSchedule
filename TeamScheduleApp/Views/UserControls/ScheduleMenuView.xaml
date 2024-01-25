@@ -5,7 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TeamScheduleApp.Views.UserControls"
              mc:Ignorable="d" d:Height="1080" d:Width="1960">
-    
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/TeamScheduleApp;component/Resources/StyleResources.xaml"/>
+    </UserControl.Resources>
+
     <Grid Background="#fff">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -14,34 +18,73 @@
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="0.25*"/>
                 <ColumnDefinition Width="2.5*"/>
             </Grid.ColumnDefinitions>
-            
-            <Viewbox>
+
+            <Viewbox Grid.Column="1">
                 <TextBlock
-                    Text="Schedule"
+                    Text="TeamSchedule"
+                    FontFamily="Dongle"
+                    FontWeight="Regular"
                     Margin="1"/>
             </Viewbox>
 
-            <Viewbox Grid.Column="2">
-                <StackPanel
-                    Orientation="Horizontal"
-                    Margin="1">
-                    <Button
-                        Content="Refresh"
-                        Margin="0,0,2,0"/>
-                    <Button Content="Profile"/>
-                    <Button
-                        Content="Add Task"
-                        Margin="2,0,2,0"/>
-                    <Button
-                        Content="Exit"/>
-                </StackPanel>
-            </Viewbox>
+            <Grid
+                Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Viewbox
+                    Grid.Row="1"
+                    Grid.Column="1">
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <Button
+                            Content="Refresh"
+                            Margin="0,0,5,0"
+                            FontFamily="Dongle"
+                            FontWeight="Light"/>
+                        <Button
+                            Content="Profile"
+                            FontFamily="Dongle"
+                            FontWeight="Light"/>
+                        <Button
+                            Content="Add Task"
+                            Margin="5,0,5,0"
+                            FontFamily="Dongle"
+                            FontWeight="Light"/>
+                        <Button
+                            Content="Exit"
+                            FontFamily="Dongle"
+                            FontWeight="Light"/>
+                    </StackPanel>
+                </Viewbox>
+            </Grid>
         </Grid>
 
-        <DataGrid Grid.Row="1" Margin="7"/>
+        <Border
+            Grid.Row="1"
+            Background="#f1f1f1">
+            <DataGrid
+                x:Name="dgMain"
+                Background="{x:Null}"
+                Margin="7"
+                BorderThickness="0"
+                GridLinesVisibility="Horizontal"
+                ColumnHeaderStyle="{StaticResource dgColumnHeader}"
+                HeadersVisibility="Column">
+            </DataGrid>
+        </Border>
     </Grid>
 </UserControl>

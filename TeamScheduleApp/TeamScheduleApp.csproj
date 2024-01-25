@@ -2,6 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <LangVersion>preview</LangVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{80902D08-280A-4522-B038-46A4D1092FA2}</ProjectGuid>
@@ -94,6 +95,7 @@
     <Compile Include="Conventers\EnterButtonTextConventer.cs" />
     <Compile Include="Conventers\GetUserInitElementsVM.cs" />
     <Compile Include="Conventers\IndexToStyleConverter.cs" />
+    <Compile Include="Conventers\TbFocusChangeConventer.cs" />
     <Compile Include="Models\RegistrationModels\ContinueButtonProcessor.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\RegistrationModels\PersonDataProcessor.cs" />

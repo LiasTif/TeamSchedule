@@ -12,7 +12,6 @@ namespace TeamScheduleApp.ViewModels.Elements
         public TextBoxViewModel(UserInitElementsViewModel parentVM) => ParentVM = parentVM;
 
         public int Id { get; set; }
-        public bool IsSelected { get; set; }
 
         private string _text;
         public string Text
